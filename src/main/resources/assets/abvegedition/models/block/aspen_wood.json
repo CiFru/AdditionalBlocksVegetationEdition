@@ -1,7 +1,6 @@
 {
-  "parent": "minecraft:block/cube_column",
+  "parent": "minecraft:block/cube_all",
   "textures": {
-    "end": "minecraft:block/aspen_log",
-    "side": "minecraft:block/aspen_log"
+    "all": "abvegedition:aspen_log"
   }
 }

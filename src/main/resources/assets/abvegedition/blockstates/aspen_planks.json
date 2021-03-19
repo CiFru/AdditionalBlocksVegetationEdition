@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "minecraft:block/aspen_planks"
+      "model": "abvegedition:block/aspen_planks"
     }
   }
 }

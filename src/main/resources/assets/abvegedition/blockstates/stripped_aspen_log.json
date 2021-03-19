@@ -1,15 +1,15 @@
 {
   "variants": {
     "axis=x": {
-      "model": "minecraft:block/stripped_aspen_log_horizontal",
+      "model": "abvegedition:block/stripped_aspen_log",
       "x": 90,
       "y": 90
     },
     "axis=y": {
-      "model": "minecraft:block/stripped_aspen_log"
+      "model": "abvegedition:block/stripped_aspen_log"
     },
     "axis=z": {
-      "model": "minecraft:block/stripped_aspen_log_horizontal",
+      "model": "abvegedition:block/stripped_aspen_log",
       "x": 90
     }
   }
