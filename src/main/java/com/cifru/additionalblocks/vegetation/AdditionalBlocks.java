@@ -36,8 +36,14 @@ public class AdditionalBlocks {
     private static final List<Block> blocks = new ArrayList<>();
     private static final List<Item> items = new ArrayList<>();
 
-    public static BasicBlock marble;
-
+    public static BasicBlock aspen_log;
+    public static BasicBlock aspen_wood;
+    public static BasicBlock aspen_planks;
+    public static BasicBlock aspen_leaves;
+    public static BasicBlock stripped_aspen_log;
+    public static BasicBlock stripped_aspen_wood;
+    public static Block aspen_stairs;
+    public static Block aspen_slab;
 
     public AdditionalBlocks() {
         AdditionalBlocksConfig.create();
@@ -48,8 +54,14 @@ public class AdditionalBlocks {
         @SubscribeEvent
         public static void onBlockRegistry(final RegistryEvent.Register<Block> e) {
 
-            marble = registerBlock(e, new BasicBlock("marble",AdditionalBlocksConfig.enableMarble, AbstractBlock.Properties.create(Material.ROCK, MaterialColor.PINK).sound(SoundType.STONE).hardnessAndResistance(0.8f, 0.8f).harvestTool(ToolType.PICKAXE).harvestLevel(0).setRequiresTool()));
-
+            aspen_log = registerBlock(e, new AxisRotationBlock("aspen_log",AdditionalBlocksConfig.enableAspen, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(0.8f,0.8f)));
+            aspen_wood = registerBlock(e, new BasicBlock("aspen_wood",AdditionalBlocksConfig.enableAspen, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(0.8f,0.8f)));
+            aspen_planks = registerBlock(e, new BasicBlock("aspen_planks",AdditionalBlocksConfig.enableAspen, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(0.8f,0.8f)));
+            aspen_leaves = registerBlock(e, new BasicBlock("aspen_leaves",AdditionalBlocksConfig.enableAspen, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(0.8f,0.8f)));
+            aspen_slab = registerBlock(e, new SlabBlock(aspen_planks, "aspen_slab",AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(0.8f,0.8f)));
+            aspen_stairs = registerBlock(e, new StairBlock(aspen_planks, "aspen_stairs",AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(0.8f,0.8f)));
+            stripped_aspen_log = registerBlock(e, new AxisRotationBlock("stripped_aspen_log",AdditionalBlocksConfig.enableAspen, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(0.8f,0.8f)));
+            stripped_aspen_wood = registerBlock(e, new AxisRotationBlock("stripped_aspen_log",AdditionalBlocksConfig.enableAspen, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(0.8f,0.8f)));
         }
 
         @SubscribeEvent
@@ -69,9 +81,9 @@ public class AdditionalBlocks {
 
         @SubscribeEvent
         public static void onRecipeRegistry(final RegistryEvent.Register<IRecipeSerializer<?>> e){
-            e.getRegistry().register(SHAPED_RECIPE_SERIALIZER.setRegistryName(new ResourceLocation("abstoneedition", "shaped")));
-            e.getRegistry().register(SHAPELESS_RECIPE_SERIALIZER.setRegistryName(new ResourceLocation("abstoneedition", "shapeless")));
-            e.getRegistry().register(FURNACE_RECIPE_SERIALIZER.setRegistryName(new ResourceLocation("abstoneedition", "furnace")));
+            e.getRegistry().register(SHAPED_RECIPE_SERIALIZER.setRegistryName(new ResourceLocation("abvegedition", "shaped")));
+            e.getRegistry().register(SHAPELESS_RECIPE_SERIALIZER.setRegistryName(new ResourceLocation("abvegedition", "shapeless")));
+            e.getRegistry().register(FURNACE_RECIPE_SERIALIZER.setRegistryName(new ResourceLocation("abvegedition", "furnace")));
         }
     }
 

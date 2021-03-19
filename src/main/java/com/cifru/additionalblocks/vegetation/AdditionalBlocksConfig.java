@@ -12,12 +12,12 @@ public class AdditionalBlocksConfig {
     public static void create(){
     }
 
-    public static final Supplier<Boolean> enableMarble;
+    public static final Supplier<Boolean> enableAspen;
 
     static {
         ModConfigBuilder config = new ModConfigBuilder("abvegedition");
         config.push("blocks");
-        enableMarble = config.comment("if true, Marble Blocks are enabled").define("enableMarble", true);
+        enableAspen = config.comment("if true, Aspen Wood Blocks are enabled").define("enableAspen", true);
 
         config.pop();
 
