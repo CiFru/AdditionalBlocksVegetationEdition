@@ -1,5 +1,7 @@
 package com.cifru.additionalblocks.vegetation;
 
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -13,6 +15,8 @@ public class ClientProxy {
 
     @SubscribeEvent
     public static void setup(FMLClientSetupEvent e){
+        RenderTypeLookup.setRenderLayer(AdditionalBlocks.aspen_leaves, RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(AdditionalBlocks.blossom_leaves, RenderType.getCutout());
     }
 
 }

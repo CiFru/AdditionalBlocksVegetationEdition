@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "abvegedition:block/blossom_slab"
+    },
+    "type=double": {
+      "model": "abvegedition:block/blossom_planks"
+    },
+    "type=top": {
+      "model": "abvegedition:block/blossom_slab_top"
+    }
+  }
+}

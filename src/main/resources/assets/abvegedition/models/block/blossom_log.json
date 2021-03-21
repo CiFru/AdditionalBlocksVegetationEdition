@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "side": "abvegedition:blossom_log",
+    "top": "abvegedition:blossom_log_top",
+    "bottom": "abvegedition:blossom_log_top"
+  }
+}

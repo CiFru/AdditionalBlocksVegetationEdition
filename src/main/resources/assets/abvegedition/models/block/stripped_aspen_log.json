@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/cube_bottom_top",
   "textures": {
-    "side": "abvegedition:charred_log",
-    "top": "abvegedition:charred_log_top",
-    "bottom": "abvegedition:charred_log_top"
+    "side": "abvegedition:stripped_aspen_log",
+    "top": "abvegedition:stripped_aspen_log_top",
+    "bottom": "abvegedition:stripped_aspen_log_top"
   }
 }

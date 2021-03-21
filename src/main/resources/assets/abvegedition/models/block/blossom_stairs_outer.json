@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "abvegedition:blossom_planks",
+    "top": "abvegedition:blossom_planks",
+    "side": "abvegedition:blossom_planks"
+  }
+}

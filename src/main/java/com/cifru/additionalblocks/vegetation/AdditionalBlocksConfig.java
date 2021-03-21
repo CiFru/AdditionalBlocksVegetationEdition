@@ -13,11 +13,15 @@ public class AdditionalBlocksConfig {
     }
 
     public static final Supplier<Boolean> enableAspen;
+    public static final Supplier<Boolean> enableBlossom;
+    public static final Supplier<Boolean> enableBaobab;
 
     static {
         ModConfigBuilder config = new ModConfigBuilder("abvegedition");
         config.push("blocks");
         enableAspen = config.comment("if true, Aspen Wood Blocks are enabled").define("enableAspen", true);
+        enableBlossom = config.comment("if true, Blossom Wood Blocks are enabled").define("enableBlossom", true);
+        enableBaobab = config.comment("if true, Baobab Wood Blocks are enabled").define("enableBaobab", true);
 
         config.pop();
 

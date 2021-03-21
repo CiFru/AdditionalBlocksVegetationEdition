@@ -2,6 +2,7 @@ package com.cifru.additionalblocks.vegetation;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
@@ -15,7 +16,6 @@ import net.minecraft.item.crafting.ShapelessRecipe;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.gen.feature.Feature;
-import net.minecraftforge.common.ToolType;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -39,11 +39,28 @@ public class AdditionalBlocks {
     public static BasicBlock aspen_log;
     public static BasicBlock aspen_wood;
     public static BasicBlock aspen_planks;
-    public static BasicBlock aspen_leaves;
+    public static Block aspen_leaves;
     public static BasicBlock stripped_aspen_log;
     public static BasicBlock stripped_aspen_wood;
     public static Block aspen_stairs;
     public static Block aspen_slab;
+    public static BasicBlock blossom_log;
+    public static BasicBlock blossom_wood;
+    public static BasicBlock blossom_planks;
+    public static Block blossom_leaves;
+    public static BasicBlock stripped_blossom_log;
+    public static BasicBlock stripped_blossom_wood;
+    public static Block blossom_stairs;
+    public static Block blossom_slab;
+    public static BasicBlock baobab_log;
+    public static BasicBlock baobab_wood;
+    public static BasicBlock baobab_planks;
+    public static Block baobab_leaves;
+    public static BasicBlock stripped_baobab_log;
+    public static BasicBlock stripped_baobab_wood;
+    public static Block baobab_stairs;
+    public static Block baobab_slab;
+
 
     public AdditionalBlocks() {
         AdditionalBlocksConfig.create();
@@ -57,11 +74,27 @@ public class AdditionalBlocks {
             aspen_log = registerBlock(e, new AxisRotationBlock("aspen_log",AdditionalBlocksConfig.enableAspen, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(0.8f,0.8f)));
             aspen_wood = registerBlock(e, new BasicBlock("aspen_wood",AdditionalBlocksConfig.enableAspen, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(0.8f,0.8f)));
             aspen_planks = registerBlock(e, new BasicBlock("aspen_planks",AdditionalBlocksConfig.enableAspen, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(0.8f,0.8f)));
-            aspen_leaves = registerBlock(e, new BasicBlock("aspen_leaves",AdditionalBlocksConfig.enableAspen, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(0.8f,0.8f)));
+            aspen_leaves = registerBlock(e, new LeafBlock("aspen_leaves",AdditionalBlocksConfig.enableAspen, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.PLANT).hardnessAndResistance(0.8f,0.8f).tickRandomly().notSolid().setAllowsSpawn(LeafBlock::allowsSpawnOnLeaves).setSuffocates(LeafBlock::isntSolid).setBlocksVision(LeafBlock::isntSolid)));
             aspen_slab = registerBlock(e, new SlabBlock(aspen_planks, "aspen_slab",AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(0.8f,0.8f)));
             aspen_stairs = registerBlock(e, new StairBlock(aspen_planks, "aspen_stairs",AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(0.8f,0.8f)));
             stripped_aspen_log = registerBlock(e, new AxisRotationBlock("stripped_aspen_log",AdditionalBlocksConfig.enableAspen, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(0.8f,0.8f)));
-            stripped_aspen_wood = registerBlock(e, new AxisRotationBlock("stripped_aspen_log",AdditionalBlocksConfig.enableAspen, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(0.8f,0.8f)));
+            stripped_aspen_wood = registerBlock(e, new AxisRotationBlock("stripped_aspen_wood",AdditionalBlocksConfig.enableAspen, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(0.8f,0.8f)));
+            blossom_log = registerBlock(e, new AxisRotationBlock("blossom_log",AdditionalBlocksConfig.enableBlossom, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(0.8f,0.8f)));
+            blossom_wood = registerBlock(e, new BasicBlock("blossom_wood",AdditionalBlocksConfig.enableBlossom, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(0.8f,0.8f)));
+            blossom_planks = registerBlock(e, new BasicBlock("blossom_planks",AdditionalBlocksConfig.enableBlossom, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(0.8f,0.8f)));
+            blossom_leaves = registerBlock(e, new LeafBlock("blossom_leaves",AdditionalBlocksConfig.enableBlossom, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.PLANT).hardnessAndResistance(0.8f,0.8f).tickRandomly().notSolid().setAllowsSpawn(LeafBlock::allowsSpawnOnLeaves).setSuffocates(LeafBlock::isntSolid).setBlocksVision(LeafBlock::isntSolid)));
+            blossom_slab = registerBlock(e, new SlabBlock(blossom_planks, "blossom_slab",AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(0.8f,0.8f)));
+            blossom_stairs = registerBlock(e, new StairBlock(blossom_planks, "blossom_stairs",AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(0.8f,0.8f)));
+            stripped_blossom_log = registerBlock(e, new AxisRotationBlock("stripped_blossom_log",AdditionalBlocksConfig.enableBlossom, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(0.8f,0.8f)));
+            stripped_blossom_wood = registerBlock(e, new AxisRotationBlock("stripped_blossom_wood",AdditionalBlocksConfig.enableBlossom, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(0.8f,0.8f)));
+            baobab_log = registerBlock(e, new AxisRotationBlock("baobab_log",AdditionalBlocksConfig.enableBaobab, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(0.8f,0.8f)));
+            baobab_wood = registerBlock(e, new BasicBlock("baobab_wood",AdditionalBlocksConfig.enableBaobab, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(0.8f,0.8f)));
+            baobab_planks = registerBlock(e, new BasicBlock("baobab_planks",AdditionalBlocksConfig.enableBaobab, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(0.8f,0.8f)));
+            baobab_leaves = registerBlock(e, new LeafBlock("baobab_leaves",AdditionalBlocksConfig.enableBaobab, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.PLANT).hardnessAndResistance(0.8f,0.8f).tickRandomly().notSolid().setAllowsSpawn(LeafBlock::allowsSpawnOnLeaves).setSuffocates(LeafBlock::isntSolid).setBlocksVision(LeafBlock::isntSolid)));
+            baobab_slab = registerBlock(e, new SlabBlock(baobab_planks, "baobab_slab",AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(0.8f,0.8f)));
+            baobab_stairs = registerBlock(e, new StairBlock(baobab_planks, "baobab_stairs",AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(0.8f,0.8f)));
+            stripped_baobab_log = registerBlock(e, new AxisRotationBlock("stripped_baobab_log",AdditionalBlocksConfig.enableBaobab, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(0.8f,0.8f)));
+            stripped_baobab_wood = registerBlock(e, new AxisRotationBlock("stripped_baobab_wood",AdditionalBlocksConfig.enableBaobab, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(0.8f,0.8f)));
         }
 
         @SubscribeEvent
