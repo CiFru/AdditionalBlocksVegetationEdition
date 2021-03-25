@@ -15,8 +15,6 @@ public class ClientProxy {
 
     @SubscribeEvent
     public static void setup(FMLClientSetupEvent e){
-        RenderTypeLookup.setRenderLayer(AdditionalBlocks.aspen_leaves, RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(AdditionalBlocks.blossom_leaves, RenderType.getCutout());
     }
 
 }
