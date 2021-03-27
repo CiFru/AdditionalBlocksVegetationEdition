@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "abvegedition:block/rosewood_slab"
+    },
+    "type=double": {
+      "model": "abvegedition:block/rosewood_planks"
+    },
+    "type=top": {
+      "model": "abvegedition:block/rosewood_slab_top"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "side": "abvegedition:rosewood_log",
+    "top": "abvegedition:rosewood_log_top",
+    "bottom": "abvegedition:rosewood_log_top"
+  }
+}
