@@ -1,0 +1,12 @@
+{
+  "type": "abvegedition:shapeless",
+  "ingredients": [
+    {
+      "item": "abvegedition:palm_log"
+    }
+  ],
+  "result": {
+    "item": "abvegedition:palm_planks",
+    "count": 4
+  }
+}

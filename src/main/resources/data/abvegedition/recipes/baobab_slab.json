@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "wooden_slab",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "abvegedition:baobab_planks"
+    }
+  },
+  "result": {
+    "item": "abvegedition:baobab_slab",
+    "count": 6
+  }
+}

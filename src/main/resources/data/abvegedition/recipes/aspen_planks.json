@@ -1,0 +1,12 @@
+{
+  "type": "abvegedition:shapeless",
+  "ingredients": [
+    {
+      "item": "abvegedition:aspen_log"
+    }
+  ],
+  "result": {
+    "item": "abvegedition:aspen_planks",
+    "count": 4
+  }
+}

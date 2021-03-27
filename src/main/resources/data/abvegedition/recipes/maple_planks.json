@@ -1,0 +1,12 @@
+{
+  "type": "abvegedition:shapeless",
+  "ingredients": [
+    {
+      "item": "abvegedition:maple_log"
+    }
+  ],
+  "result": {
+    "item": "abvegedition:maple_planks",
+    "count": 4
+  }
+}

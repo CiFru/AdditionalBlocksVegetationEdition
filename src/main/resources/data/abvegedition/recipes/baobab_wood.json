@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "bark",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "abvegedition:baobab_log"
+    }
+  },
+  "result": {
+    "item": "abvegedition:baobab_wood",
+    "count": 3
+  }
+}

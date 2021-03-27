@@ -1,0 +1,12 @@
+{
+  "type": "abvegedition:shapeless",
+  "ingredients": [
+    {
+      "item": "abvegedition:rosewood_log"
+    }
+  ],
+  "result": {
+    "item": "abvegedition:rosewood_planks",
+    "count": 4
+  }
+}
