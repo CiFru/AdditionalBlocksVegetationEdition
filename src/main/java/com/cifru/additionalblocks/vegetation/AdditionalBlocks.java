@@ -77,6 +77,14 @@ public class AdditionalBlocks {
     public static BasicBlock stripped_palm_wood;
     public static Block palm_stairs;
     public static Block palm_slab;
+    public static BasicBlock rosewood_log;
+    public static BasicBlock rosewood_wood;
+    public static BasicBlock rosewood_planks;
+    public static Block rosewood_leaves;
+    public static BasicBlock stripped_rosewood_log;
+    public static BasicBlock stripped_rosewood_wood;
+    public static Block rosewood_stairs;
+    public static Block rosewood_slab;
 
 
     public AdditionalBlocks() {
@@ -117,18 +125,26 @@ public class AdditionalBlocks {
             maple_wood = registerBlock(e, new BasicBlock("maple_wood",AdditionalBlocksConfig.enableMaple, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0f,2.0f)));
             maple_planks = registerBlock(e, new BasicBlock("maple_planks",AdditionalBlocksConfig.enableMaple, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0f,2.0f)));
             maple_leaves = registerBlock(e, new LeafBlock("maple_leaves",AdditionalBlocksConfig.enableMaple, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.PLANT).hardnessAndResistance(0.8f,0.8f).tickRandomly().notSolid().setAllowsSpawn(LeafBlock::allowsSpawnOnLeaves).setSuffocates(LeafBlock::isntSolid).setBlocksVision(LeafBlock::isntSolid)));
-            maple_slab = registerBlock(e, new SlabBlock(baobab_planks, "maple_slab",AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0f,2.0f)));
-            maple_stairs = registerBlock(e, new StairBlock(baobab_planks, "maple_stairs",AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0f,2.0f)));
+            maple_slab = registerBlock(e, new SlabBlock(maple_planks, "maple_slab",AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0f,2.0f)));
+            maple_stairs = registerBlock(e, new StairBlock(maple_planks, "maple_stairs",AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0f,2.0f)));
             stripped_maple_log = registerBlock(e, new AxisRotationBlock("stripped_maple_log",AdditionalBlocksConfig.enableMaple, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0f,2.0f)));
             stripped_maple_wood = registerBlock(e, new AxisRotationBlock("stripped_maple_wood",AdditionalBlocksConfig.enableMaple, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0f,2.0f)));
             palm_log = registerBlock(e, new AxisRotationBlock("palm_log",AdditionalBlocksConfig.enablePalm, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0f,2.0f)));
             palm_wood = registerBlock(e, new BasicBlock("palm_wood",AdditionalBlocksConfig.enablePalm, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0f,2.0f)));
             palm_planks = registerBlock(e, new BasicBlock("palm_planks",AdditionalBlocksConfig.enablePalm, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0f,2.0f)));
-            palm_leaves = registerBlock(e, new LeafBlock("palm_leaves",AdditionalBlocksConfig.enablePalm, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.PLANT).hardnessAndResistance(0.8f,0.8f).tickRandomly().notSolid().setAllowsSpawn(LeafBlock::allowsSpawnOnLeaves).setSuffocates(LeafBlock::isntSolid).setBlocksVision(LeafBlock::isntSolid)));
-            palm_slab = registerBlock(e, new SlabBlock(baobab_planks, "palm_slab",AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0f,2.0f)));
-            palm_stairs = registerBlock(e, new StairBlock(baobab_planks, "palm_stairs",AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0f,2.0f)));
+            palm_leaves = registerBlock(e, new RotatingLeafBlock("palm_leaves",AdditionalBlocksConfig.enablePalm, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.PLANT).hardnessAndResistance(0.8f,0.8f).tickRandomly().notSolid().setAllowsSpawn(LeafBlock::allowsSpawnOnLeaves).setSuffocates(LeafBlock::isntSolid).setBlocksVision(LeafBlock::isntSolid)));
+            palm_slab = registerBlock(e, new SlabBlock(palm_planks, "palm_slab",AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0f,2.0f)));
+            palm_stairs = registerBlock(e, new StairBlock(palm_planks, "palm_stairs",AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0f,2.0f)));
             stripped_palm_log = registerBlock(e, new AxisRotationBlock("stripped_palm_log",AdditionalBlocksConfig.enablePalm, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0f,2.0f)));
             stripped_palm_wood = registerBlock(e, new AxisRotationBlock("stripped_palm_wood",AdditionalBlocksConfig.enablePalm, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0f,2.0f)));
+            rosewood_log = registerBlock(e, new AxisRotationBlock("rosewood_log",AdditionalBlocksConfig.enableRosewood, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0f,2.0f)));
+            rosewood_wood = registerBlock(e, new BasicBlock("rosewood_wood",AdditionalBlocksConfig.enableRosewood, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0f,2.0f)));
+            rosewood_planks = registerBlock(e, new BasicBlock("rosewood_planks",AdditionalBlocksConfig.enableRosewood, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0f,2.0f)));
+            rosewood_leaves = registerBlock(e, new LeafBlock("rosewood_leaves",AdditionalBlocksConfig.enableRosewood, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.PLANT).hardnessAndResistance(0.8f,0.8f).tickRandomly().notSolid().setAllowsSpawn(LeafBlock::allowsSpawnOnLeaves).setSuffocates(LeafBlock::isntSolid).setBlocksVision(LeafBlock::isntSolid)));
+            rosewood_slab = registerBlock(e, new SlabBlock(rosewood_planks, "rosewood_slab",AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0f,2.0f)));
+            rosewood_stairs = registerBlock(e, new StairBlock(rosewood_planks, "rosewood_stairs",AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0f,2.0f)));
+            stripped_rosewood_log = registerBlock(e, new AxisRotationBlock("stripped_rosewood_log",AdditionalBlocksConfig.enableRosewood, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0f,2.0f)));
+            stripped_rosewood_wood = registerBlock(e, new AxisRotationBlock("stripped_rosewood_wood",AdditionalBlocksConfig.enableRosewood, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0f,2.0f)));
         }
 
         @SubscribeEvent

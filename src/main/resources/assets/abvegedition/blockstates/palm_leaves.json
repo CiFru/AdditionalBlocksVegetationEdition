@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "abvegedition:block/palm_leaves",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "abvegedition:block/palm_leaves"
+    },
+    "axis=z": {
+      "model": "abvegedition:block/palm_leaves",
+      "x": 90
+    }
+  }
+}

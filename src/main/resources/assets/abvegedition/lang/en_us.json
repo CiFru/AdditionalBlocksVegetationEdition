@@ -1,5 +1,5 @@
 {
-  "block.abvegedition.aspen_door": "Aspen Door Shoji",
+  "block.abvegedition.aspen_door": "Aspen Door (Shoji)",
   "block.abvegedition.aspen_leaves": "Aspen Leaves",
   "block.abvegedition.aspen_log": "Aspen Log",
   "block.abvegedition.aspen_planks": "Aspen Planks",
@@ -31,5 +31,21 @@
   "block.abvegedition.maple_stairs": "Maple Stairs",
   "block.abvegedition.maple_wood": "Maple Wood",
   "block.abvegedition.stripped_maple_log": "Stripped Maple Log",
-  "block.abvegedition.stripped_maple_wood": "Stripped Maple Wood"
+  "block.abvegedition.stripped_maple_wood": "Stripped Maple Wood",
+  "block.abvegedition.palm_leaves": "Palm Leaves",
+  "block.abvegedition.palm_log": "Palm Log",
+  "block.abvegedition.palm_planks": "Palm Planks",
+  "block.abvegedition.palm_slab": "Palm Slab",
+  "block.abvegedition.palm_stairs": "Palm Stairs",
+  "block.abvegedition.palm_wood": "Palm Wood",
+  "block.abvegedition.stripped_palm_log": "Stripped Palm Log",
+  "block.abvegedition.stripped_palm_wood": "Stripped Palm Wood",
+  "block.abvegedition.rosewood_leaves": "Rosewood Leaves",
+  "block.abvegedition.rosewood_log": "Rosewood Log",
+  "block.abvegedition.rosewood_planks": "Rosewood Planks",
+  "block.abvegedition.rosewood_slab": "Rosewood Slab",
+  "block.abvegedition.rosewood_stairs": "Rosewood Stairs",
+  "block.abvegedition.rosewood_wood": "Rosewood Wood",
+  "block.abvegedition.stripped_rosewood_log": "Stripped Rosewood Log",
+  "block.abvegedition.stripped_rosewood_wood": "Stripped Rosewood Wood"
 }

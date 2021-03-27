@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "side": "abvegedition:palm_leaves",
+    "top": "abvegedition:palm_leaves",
+    "bottom": "abvegedition:palm_leaves"
+  }
+}
