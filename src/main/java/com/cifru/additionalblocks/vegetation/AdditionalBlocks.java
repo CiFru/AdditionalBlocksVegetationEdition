@@ -111,6 +111,12 @@ public class AdditionalBlocks {
     public static Block maple_fence_gate;
     public static Block palm_fence_gate;
     public static Block rosewood_fence_gate;
+    public static Block aspen_trapdoor;
+    public static Block baobab_trapdoor;
+    public static Block blossom_trapdoor;
+    public static Block maple_trapdoor;
+    public static Block palm_trapdoor;
+    public static Block rosewood_trapdoor;
 
 
 
@@ -201,6 +207,12 @@ public class AdditionalBlocks {
             maple_fence_gate = registerBlock(e, new PoortBlock("maple_fence_gate", AdditionalBlocksConfig.enableMaple, AbstractBlock.Properties.create(Material.WOOD, maple_planks.getMaterialColor()).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)));
             palm_fence_gate = registerBlock(e, new PoortBlock("palm_fence_gate", AdditionalBlocksConfig.enablePalm, AbstractBlock.Properties.create(Material.WOOD, palm_planks.getMaterialColor()).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)));
             rosewood_fence_gate = registerBlock(e, new PoortBlock("rosewood_fence_gate", AdditionalBlocksConfig.enableRosewood, AbstractBlock.Properties.create(Material.WOOD, rosewood_planks.getMaterialColor()).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)));
+            aspen_trapdoor = registerBlock(e, new ValluikBlock("aspen_trapdoor", AdditionalBlocksConfig.enableAspen, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+            baobab_trapdoor = registerBlock(e, new ValluikBlock("baobab_trapdoor", AdditionalBlocksConfig.enableBaobab, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+            blossom_trapdoor = registerBlock(e, new ValluikBlock("blossom_trapdoor", AdditionalBlocksConfig.enableBlossom, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+            maple_trapdoor = registerBlock(e, new ValluikBlock("maple_trapdoor", AdditionalBlocksConfig.enableMaple, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+            palm_trapdoor = registerBlock(e, new ValluikBlock("palm_trapdoor", AdditionalBlocksConfig.enablePalm, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+            rosewood_trapdoor = registerBlock(e, new ValluikBlock("rosewood_trapdoor", AdditionalBlocksConfig.enableRosewood, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
         }
 
         @SubscribeEvent

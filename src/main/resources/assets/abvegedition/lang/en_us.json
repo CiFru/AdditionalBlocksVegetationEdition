@@ -76,5 +76,11 @@
   "block.abvegedition.blossom_fence_gate": "Blossom Fence Gate",
   "block.abvegedition.maple_fence_gate": "Maple Fence Gate",
   "block.abvegedition.palm_fence_gate": "Palm Fence Gate",
-  "block.abvegedition.rosewood_fence_gate": "Rosewood Fence Gate"
+  "block.abvegedition.rosewood_fence_gate": "Rosewood Fence Gate",
+  "block.abvegedition.aspen_trapdoor": "Aspen Trapdoor",
+  "block.abvegedition.baobab_trapdoor": "Baobab Trapdoor",
+  "block.abvegedition.blossom_trapdoor": "Blossom Trapdoor",
+  "block.abvegedition.maple_trapdoor": "Maple Trapdoor",
+  "block.abvegedition.palm_trapdoor": "Palm Trapdoor",
+  "block.abvegedition.rosewood_trapdoor": "Rosewood Trapdoor"
 }
