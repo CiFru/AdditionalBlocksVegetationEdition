@@ -15,6 +15,8 @@ public class ClientProxy {
 
     @SubscribeEvent
     public static void setup(FMLClientSetupEvent e){
+        RenderTypeLookup.setRenderLayer(AdditionalBlocks.baobab_door,RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(AdditionalBlocks.palm_door,RenderType.getCutout());
     }
 
 }

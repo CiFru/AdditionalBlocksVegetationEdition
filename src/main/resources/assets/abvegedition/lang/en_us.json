@@ -1,5 +1,5 @@
 {
-  "block.abvegedition.aspen_door": "Aspen Door (Shoji)",
+  "block.abvegedition.aspen_door": "Aspen Wood Door (Shoji)",
   "block.abvegedition.aspen_leaves": "Aspen Leaves",
   "block.abvegedition.aspen_log": "Aspen Log",
   "block.abvegedition.aspen_planks": "Aspen Planks",
@@ -47,5 +47,18 @@
   "block.abvegedition.rosewood_stairs": "Rosewood Stairs",
   "block.abvegedition.rosewood_wood": "Rosewood Wood",
   "block.abvegedition.stripped_rosewood_log": "Stripped Rosewood Log",
-  "block.abvegedition.stripped_rosewood_wood": "Stripped Rosewood Wood"
+  "block.abvegedition.stripped_rosewood_wood": "Stripped Rosewood Wood",
+  "block.abvegedition.baobab_door": "Baobab Wood Door",
+  "block.abvegedition.blossom_door": "Blossom Wood Door",
+  "block.abvegedition.maple_door": "Maple Wood Door",
+  "block.abvegedition.palm_door": "Palm Wood Door",
+  "block.abvegedition.rosewood_door": "Rosewood Wood Door",
+  "block.abvegedition.aspen_fence": "Aspen Fence",
+  "block.abvegedition.baobab_fence": "Baobab Fence",
+  "block.abvegedition.blossom_fence": "Blossom Fence",
+  "block.abvegedition.maple_fence": "Maple Fence",
+  "block.abvegedition.palm_fence": "Palm Fence",
+  "block.abvegedition.rosewood_fence": "Rosewood Fence"
+
+
 }

@@ -33,6 +33,4 @@ public class DeurBlock extends DoorBlock implements IConfigObject {
     public boolean isEnabled() {
         return this.enable.get();
     }
-
-
 }

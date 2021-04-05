@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom",
+  "textures": {
+    "top": "abvegedition:rosewood_door_top",
+    "bottom": "abvegedition:rosewood_door_bottom"
+  }
+}
