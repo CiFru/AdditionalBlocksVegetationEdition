@@ -99,6 +99,19 @@ public class AdditionalBlocks {
     public static Block maple_button;
     public static Block palm_button;
     public static Block rosewood_button;
+    public static Block aspen_pressure_plate;
+    public static Block baobab_pressure_plate;
+    public static Block blossom_pressure_plate;
+    public static Block maple_pressure_plate;
+    public static Block palm_pressure_plate;
+    public static Block rosewood_pressure_plate;
+    public static Block aspen_fence_gate;
+    public static Block baobab_fence_gate;
+    public static Block blossom_fence_gate;
+    public static Block maple_fence_gate;
+    public static Block palm_fence_gate;
+    public static Block rosewood_fence_gate;
+
 
 
     public AdditionalBlocks() {
@@ -114,7 +127,7 @@ public class AdditionalBlocks {
             aspen_wood = registerBlock(e, new BasicBlock("aspen_wood",AdditionalBlocksConfig.enableAspen, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0f,2.0f)));
             aspen_planks = registerBlock(e, new BasicBlock("aspen_planks",AdditionalBlocksConfig.enableAspen, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0f,2.0f)));
             aspen_leaves = registerBlock(e, new LeafBlock("aspen_leaves",AdditionalBlocksConfig.enableAspen, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.PLANT).hardnessAndResistance(0.2f,0.2f).tickRandomly().notSolid().setAllowsSpawn(LeafBlock::allowsSpawnOnLeaves).setSuffocates(LeafBlock::isntSolid).setBlocksVision(LeafBlock::isntSolid)));
-            aspen_door = registerBlock(e, new DeurBlock("aspen_door",AdditionalBlocksConfig.enableAspen, AbstractBlock.Properties.create(Material.WOOD, Blocks.OAK_PLANKS.getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+            aspen_door = registerBlock(e, new DeurBlock("aspen_door",AdditionalBlocksConfig.enableAspen, AbstractBlock.Properties.create(Material.WOOD, aspen_planks.getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
             aspen_slab = registerBlock(e, new SlabBlock(aspen_planks, "aspen_slab",AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0f,2.0f)));
             aspen_stairs = registerBlock(e, new StairBlock(aspen_planks, "aspen_stairs",AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0f,2.0f)));
             stripped_aspen_log = registerBlock(e, new AxisRotationBlock("stripped_aspen_log",AdditionalBlocksConfig.enableAspen, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0f,2.0f)));
@@ -159,23 +172,35 @@ public class AdditionalBlocks {
             rosewood_stairs = registerBlock(e, new StairBlock(rosewood_planks, "rosewood_stairs",AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0f,2.0f)));
             stripped_rosewood_log = registerBlock(e, new AxisRotationBlock("stripped_rosewood_log",AdditionalBlocksConfig.enableRosewood, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0f,2.0f)));
             stripped_rosewood_wood = registerBlock(e, new AxisRotationBlock("stripped_rosewood_wood",AdditionalBlocksConfig.enableRosewood, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0f,2.0f)));
-            baobab_door = registerBlock(e, new DeurBlock("baobab_door",AdditionalBlocksConfig.enableBaobab, AbstractBlock.Properties.create(Material.WOOD, Blocks.OAK_PLANKS.getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
-            blossom_door = registerBlock(e, new DeurBlock("blossom_door",AdditionalBlocksConfig.enableBlossom, AbstractBlock.Properties.create(Material.WOOD, Blocks.OAK_PLANKS.getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
-            maple_door = registerBlock(e, new DeurBlock("maple_door",AdditionalBlocksConfig.enableMaple, AbstractBlock.Properties.create(Material.WOOD, Blocks.OAK_PLANKS.getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
-            palm_door = registerBlock(e, new DeurBlock("palm_door",AdditionalBlocksConfig.enablePalm, AbstractBlock.Properties.create(Material.WOOD, Blocks.OAK_PLANKS.getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
-            rosewood_door = registerBlock(e, new DeurBlock("rosewood_door",AdditionalBlocksConfig.enableRosewood, AbstractBlock.Properties.create(Material.WOOD, Blocks.OAK_PLANKS.getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
-            aspen_fence = registerBlock(e, new HekBlock("aspen_fence",AdditionalBlocksConfig.enableAspen, AbstractBlock.Properties.create(Material.WOOD, Blocks.OAK_PLANKS.getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
-            baobab_fence = registerBlock(e, new HekBlock("baobab_fence",AdditionalBlocksConfig.enableBaobab, AbstractBlock.Properties.create(Material.WOOD, Blocks.OAK_PLANKS.getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
-            blossom_fence = registerBlock(e, new HekBlock("blossom_fence",AdditionalBlocksConfig.enableBlossom, AbstractBlock.Properties.create(Material.WOOD, Blocks.OAK_PLANKS.getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
-            maple_fence = registerBlock(e, new HekBlock("maple_fence",AdditionalBlocksConfig.enableMaple, AbstractBlock.Properties.create(Material.WOOD, Blocks.OAK_PLANKS.getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
-            palm_fence = registerBlock(e, new HekBlock("palm_fence",AdditionalBlocksConfig.enablePalm, AbstractBlock.Properties.create(Material.WOOD, Blocks.OAK_PLANKS.getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
-            rosewood_fence = registerBlock(e, new HekBlock("rosewood_fence",AdditionalBlocksConfig.enableRosewood, AbstractBlock.Properties.create(Material.WOOD, Blocks.OAK_PLANKS.getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+            baobab_door = registerBlock(e, new DeurBlock("baobab_door",AdditionalBlocksConfig.enableBaobab, AbstractBlock.Properties.create(Material.WOOD, baobab_planks.getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+            blossom_door = registerBlock(e, new DeurBlock("blossom_door",AdditionalBlocksConfig.enableBlossom, AbstractBlock.Properties.create(Material.WOOD, blossom_planks.getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+            maple_door = registerBlock(e, new DeurBlock("maple_door",AdditionalBlocksConfig.enableMaple, AbstractBlock.Properties.create(Material.WOOD, maple_planks.getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+            palm_door = registerBlock(e, new DeurBlock("palm_door",AdditionalBlocksConfig.enablePalm, AbstractBlock.Properties.create(Material.WOOD, palm_planks.getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+            rosewood_door = registerBlock(e, new DeurBlock("rosewood_door",AdditionalBlocksConfig.enableRosewood, AbstractBlock.Properties.create(Material.WOOD, rosewood_planks.getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+            aspen_fence = registerBlock(e, new HekBlock("aspen_fence",AdditionalBlocksConfig.enableAspen, AbstractBlock.Properties.create(Material.WOOD, aspen_planks.getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+            baobab_fence = registerBlock(e, new HekBlock("baobab_fence",AdditionalBlocksConfig.enableBaobab, AbstractBlock.Properties.create(Material.WOOD, baobab_planks.getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+            blossom_fence = registerBlock(e, new HekBlock("blossom_fence",AdditionalBlocksConfig.enableBlossom, AbstractBlock.Properties.create(Material.WOOD, blossom_planks.getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+            maple_fence = registerBlock(e, new HekBlock("maple_fence",AdditionalBlocksConfig.enableMaple, AbstractBlock.Properties.create(Material.WOOD, maple_planks.getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+            palm_fence = registerBlock(e, new HekBlock("palm_fence",AdditionalBlocksConfig.enablePalm, AbstractBlock.Properties.create(Material.WOOD, palm_planks.getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+            rosewood_fence = registerBlock(e, new HekBlock("rosewood_fence",AdditionalBlocksConfig.enableRosewood, AbstractBlock.Properties.create(Material.WOOD, rosewood_planks.getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
             aspen_button = registerBlock(e, new KnopBlock("aspen_button", AdditionalBlocksConfig.enableAspen, AbstractBlock.Properties.create(Material.MISCELLANEOUS).doesNotBlockMovement().hardnessAndResistance(0.5F).sound(SoundType.WOOD)));
             baobab_button = registerBlock(e, new KnopBlock("baobab_button", AdditionalBlocksConfig.enableBaobab, AbstractBlock.Properties.create(Material.MISCELLANEOUS).doesNotBlockMovement().hardnessAndResistance(0.5F).sound(SoundType.WOOD)));
             blossom_button = registerBlock(e, new KnopBlock("blossom_button", AdditionalBlocksConfig.enableBlossom, AbstractBlock.Properties.create(Material.MISCELLANEOUS).doesNotBlockMovement().hardnessAndResistance(0.5F).sound(SoundType.WOOD)));
             maple_button = registerBlock(e, new KnopBlock("maple_button", AdditionalBlocksConfig.enableMaple, AbstractBlock.Properties.create(Material.MISCELLANEOUS).doesNotBlockMovement().hardnessAndResistance(0.5F).sound(SoundType.WOOD)));
             palm_button = registerBlock(e, new KnopBlock("palm_button", AdditionalBlocksConfig.enablePalm, AbstractBlock.Properties.create(Material.MISCELLANEOUS).doesNotBlockMovement().hardnessAndResistance(0.5F).sound(SoundType.WOOD)));
             rosewood_button = registerBlock(e, new KnopBlock("rosewood_button", AdditionalBlocksConfig.enableRosewood, AbstractBlock.Properties.create(Material.MISCELLANEOUS).doesNotBlockMovement().hardnessAndResistance(0.5F).sound(SoundType.WOOD)));
+            aspen_pressure_plate = registerBlock(e, new DrukplaatBlock("aspen_pressure_plate", AdditionalBlocksConfig.enableAspen, AbstractBlock.Properties.create(Material.WOOD, aspen_planks.getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(0.5F).sound(SoundType.WOOD)));
+            baobab_pressure_plate = registerBlock(e, new DrukplaatBlock("baobab_pressure_plate", AdditionalBlocksConfig.enableBaobab, AbstractBlock.Properties.create(Material.WOOD, baobab_planks.getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(0.5F).sound(SoundType.WOOD)));
+            blossom_pressure_plate = registerBlock(e, new DrukplaatBlock("blossom_pressure_plate", AdditionalBlocksConfig.enableBlossom, AbstractBlock.Properties.create(Material.WOOD, blossom_planks.getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(0.5F).sound(SoundType.WOOD)));
+            maple_pressure_plate = registerBlock(e, new DrukplaatBlock("maple_pressure_plate", AdditionalBlocksConfig.enableMaple, AbstractBlock.Properties.create(Material.WOOD, maple_planks.getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(0.5F).sound(SoundType.WOOD)));
+            palm_pressure_plate = registerBlock(e, new DrukplaatBlock("palm_pressure_plate", AdditionalBlocksConfig.enablePalm, AbstractBlock.Properties.create(Material.WOOD, palm_planks.getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(0.5F).sound(SoundType.WOOD)));
+            rosewood_pressure_plate = registerBlock(e, new DrukplaatBlock("rosewood_pressure_plate", AdditionalBlocksConfig.enableRosewood, AbstractBlock.Properties.create(Material.WOOD, rosewood_planks.getMaterialColor()).doesNotBlockMovement().hardnessAndResistance(0.5F).sound(SoundType.WOOD)));
+            aspen_fence_gate = registerBlock(e, new PoortBlock("aspen_fence_gate", AdditionalBlocksConfig.enableAspen, AbstractBlock.Properties.create(Material.WOOD, aspen_planks.getMaterialColor()).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)));
+            baobab_fence_gate = registerBlock(e, new PoortBlock("baobab_fence_gate", AdditionalBlocksConfig.enableBaobab, AbstractBlock.Properties.create(Material.WOOD, baobab_planks.getMaterialColor()).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)));
+            blossom_fence_gate = registerBlock(e, new PoortBlock("blossom_fence_gate", AdditionalBlocksConfig.enableBlossom, AbstractBlock.Properties.create(Material.WOOD, blossom_planks.getMaterialColor()).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)));
+            maple_fence_gate = registerBlock(e, new PoortBlock("maple_fence_gate", AdditionalBlocksConfig.enableMaple, AbstractBlock.Properties.create(Material.WOOD, maple_planks.getMaterialColor()).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)));
+            palm_fence_gate = registerBlock(e, new PoortBlock("palm_fence_gate", AdditionalBlocksConfig.enablePalm, AbstractBlock.Properties.create(Material.WOOD, palm_planks.getMaterialColor()).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)));
+            rosewood_fence_gate = registerBlock(e, new PoortBlock("rosewood_fence_gate", AdditionalBlocksConfig.enableRosewood, AbstractBlock.Properties.create(Material.WOOD, rosewood_planks.getMaterialColor()).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD)));
         }
 
         @SubscribeEvent

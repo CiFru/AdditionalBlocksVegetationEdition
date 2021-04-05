@@ -64,7 +64,17 @@
   "block.abvegedition.blossom_button": "Blossom Button",
   "block.abvegedition.maple_button": "Maple Button",
   "block.abvegedition.palm_button": "Palm Button",
-  "block.abvegedition.rosewood_button": "Rosewood Button"
-
-
+  "block.abvegedition.rosewood_button": "Rosewood Button",
+  "block.abvegedition.aspen_pressure_plate": "Aspen Pressure Plate",
+  "block.abvegedition.baobab_pressure_plate": "Baobab Pressure Plate",
+  "block.abvegedition.blossom_pressure_plate": "Blossom Pressure Plate",
+  "block.abvegedition.maple_pressure_plate": "Maple Pressure Plate",
+  "block.abvegedition.palm_pressure_plate": "Palm Pressure Plate",
+  "block.abvegedition.rosewood_pressure_plate": "Rosewood Pressure Plate",
+  "block.abvegedition.aspen_fence_gate": "Aspen Fence Gate",
+  "block.abvegedition.baobab_fence_gate": "Baobab Fence Gate",
+  "block.abvegedition.blossom_fence_gate": "Blossom Fence Gate",
+  "block.abvegedition.maple_fence_gate": "Maple Fence Gate",
+  "block.abvegedition.palm_fence_gate": "Palm Fence Gate",
+  "block.abvegedition.rosewood_fence_gate": "Rosewood Fence Gate"
 }
