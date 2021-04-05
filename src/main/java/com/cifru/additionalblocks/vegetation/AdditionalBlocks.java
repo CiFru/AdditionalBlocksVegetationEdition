@@ -93,6 +93,12 @@ public class AdditionalBlocks {
     public static Block maple_fence;
     public static Block palm_fence;
     public static Block rosewood_fence;
+    public static Block aspen_button;
+    public static Block baobab_button;
+    public static Block blossom_button;
+    public static Block maple_button;
+    public static Block palm_button;
+    public static Block rosewood_button;
 
 
     public AdditionalBlocks() {
@@ -164,6 +170,12 @@ public class AdditionalBlocks {
             maple_fence = registerBlock(e, new HekBlock("maple_fence",AdditionalBlocksConfig.enableMaple, AbstractBlock.Properties.create(Material.WOOD, Blocks.OAK_PLANKS.getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
             palm_fence = registerBlock(e, new HekBlock("palm_fence",AdditionalBlocksConfig.enablePalm, AbstractBlock.Properties.create(Material.WOOD, Blocks.OAK_PLANKS.getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
             rosewood_fence = registerBlock(e, new HekBlock("rosewood_fence",AdditionalBlocksConfig.enableRosewood, AbstractBlock.Properties.create(Material.WOOD, Blocks.OAK_PLANKS.getMaterialColor()).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
+            aspen_button = registerBlock(e, new KnopBlock("aspen_button", AdditionalBlocksConfig.enableAspen, AbstractBlock.Properties.create(Material.MISCELLANEOUS).doesNotBlockMovement().hardnessAndResistance(0.5F).sound(SoundType.WOOD)));
+            baobab_button = registerBlock(e, new KnopBlock("baobab_button", AdditionalBlocksConfig.enableBaobab, AbstractBlock.Properties.create(Material.MISCELLANEOUS).doesNotBlockMovement().hardnessAndResistance(0.5F).sound(SoundType.WOOD)));
+            blossom_button = registerBlock(e, new KnopBlock("blossom_button", AdditionalBlocksConfig.enableBlossom, AbstractBlock.Properties.create(Material.MISCELLANEOUS).doesNotBlockMovement().hardnessAndResistance(0.5F).sound(SoundType.WOOD)));
+            maple_button = registerBlock(e, new KnopBlock("maple_button", AdditionalBlocksConfig.enableMaple, AbstractBlock.Properties.create(Material.MISCELLANEOUS).doesNotBlockMovement().hardnessAndResistance(0.5F).sound(SoundType.WOOD)));
+            palm_button = registerBlock(e, new KnopBlock("palm_button", AdditionalBlocksConfig.enablePalm, AbstractBlock.Properties.create(Material.MISCELLANEOUS).doesNotBlockMovement().hardnessAndResistance(0.5F).sound(SoundType.WOOD)));
+            rosewood_button = registerBlock(e, new KnopBlock("rosewood_button", AdditionalBlocksConfig.enableRosewood, AbstractBlock.Properties.create(Material.MISCELLANEOUS).doesNotBlockMovement().hardnessAndResistance(0.5F).sound(SoundType.WOOD)));
         }
 
         @SubscribeEvent

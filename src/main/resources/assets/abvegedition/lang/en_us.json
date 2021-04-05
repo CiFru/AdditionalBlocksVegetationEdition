@@ -58,7 +58,13 @@
   "block.abvegedition.blossom_fence": "Blossom Fence",
   "block.abvegedition.maple_fence": "Maple Fence",
   "block.abvegedition.palm_fence": "Palm Fence",
-  "block.abvegedition.rosewood_fence": "Rosewood Fence"
+  "block.abvegedition.rosewood_fence": "Rosewood Fence",
+  "block.abvegedition.aspen_button": "Aspen Button",
+  "block.abvegedition.baobab_button": "Baobab Button",
+  "block.abvegedition.blossom_button": "Blossom Button",
+  "block.abvegedition.maple_button": "Maple Button",
+  "block.abvegedition.palm_button": "Palm Button",
+  "block.abvegedition.rosewood_button": "Rosewood Button"
 
 
 }
