@@ -4,7 +4,9 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 /**
@@ -18,6 +20,7 @@ public class ClientProxy {
         RenderTypeLookup.setRenderLayer(AdditionalBlocks.baobab_door,RenderType.getTranslucent());
         RenderTypeLookup.setRenderLayer(AdditionalBlocks.baobab_trapdoor,RenderType.getTranslucent());
         RenderTypeLookup.setRenderLayer(AdditionalBlocks.palm_door,RenderType.getCutout());
+        ClientRegistry.bindTileEntityRenderer(AdditionalBlocks.aspen_sign_tile_entity, BordTileEntityRenderer::new);
     }
 
 }
