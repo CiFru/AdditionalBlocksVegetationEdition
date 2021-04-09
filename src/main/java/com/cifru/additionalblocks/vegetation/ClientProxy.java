@@ -24,6 +24,12 @@ public class ClientProxy {
         RenderTypeLookup.setRenderLayer(AdditionalBlocks.baobab_trapdoor,RenderType.getTranslucent());
         RenderTypeLookup.setRenderLayer(AdditionalBlocks.palm_door,RenderType.getCutout());
         ClientRegistry.bindTileEntityRenderer(AdditionalBlocks.aspen_sign_tile_entity, BordTileEntityRenderer::new);
+        ClientRegistry.bindTileEntityRenderer(AdditionalBlocks.baobab_sign_tile_entity, BordTileEntityRenderer::new);
+        ClientRegistry.bindTileEntityRenderer(AdditionalBlocks.blossom_sign_tile_entity, BordTileEntityRenderer::new);
+        ClientRegistry.bindTileEntityRenderer(AdditionalBlocks.maple_sign_tile_entity, BordTileEntityRenderer::new);
+        ClientRegistry.bindTileEntityRenderer(AdditionalBlocks.palm_sign_tile_entity, BordTileEntityRenderer::new);
+        ClientRegistry.bindTileEntityRenderer(AdditionalBlocks.rosewood_sign_tile_entity, BordTileEntityRenderer::new);
+
     }
 
     @SubscribeEvent
