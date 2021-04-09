@@ -1,8 +1,11 @@
 package com.cifru.additionalblocks.vegetation;
 
+import net.minecraft.client.renderer.Atlases;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod;
@@ -23,4 +26,16 @@ public class ClientProxy {
         ClientRegistry.bindTileEntityRenderer(AdditionalBlocks.aspen_sign_tile_entity, BordTileEntityRenderer::new);
     }
 
+    @SubscribeEvent
+    public static void onTextureStitch(TextureStitchEvent.Pre e){
+        if(e.getMap().getTextureLocation().equals(Atlases.SIGN_ATLAS)){
+            e.addSprite(new ResourceLocation("abvegedition:aspen_sign"));
+            e.addSprite(new ResourceLocation("abvegedition:baobab_sign"));
+            e.addSprite(new ResourceLocation("abvegedition:blossom_sign"));
+            e.addSprite(new ResourceLocation("abvegedition:maple_sign"));
+            e.addSprite(new ResourceLocation("abvegedition:palm_sign"));
+            e.addSprite(new ResourceLocation("abvegedition:rosewood_sign"));
+
+        }
+    }
 }

@@ -82,5 +82,11 @@
   "block.abvegedition.blossom_trapdoor": "Blossom Trapdoor",
   "block.abvegedition.maple_trapdoor": "Maple Trapdoor",
   "block.abvegedition.palm_trapdoor": "Palm Trapdoor",
-  "block.abvegedition.rosewood_trapdoor": "Rosewood Trapdoor"
+  "block.abvegedition.rosewood_trapdoor": "Rosewood Trapdoor",
+  "block.abvegedition.aspen_sign_standing": "Aspen Sign",
+  "block.abvegedition.baobab_sign_standing": "Baobab Sign",
+  "block.abvegedition.blossom_sign_standing": "Blossom Sign",
+  "block.abvegedition.maple_sign_standing": "Maple Sign",
+  "block.abvegedition.palm_sign_standing": "Palm Sign",
+  "block.abvegedition.rosewood_sign_standing": "Rosewood Sign"
 }

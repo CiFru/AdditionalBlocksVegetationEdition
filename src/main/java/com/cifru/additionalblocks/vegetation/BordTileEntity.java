@@ -3,16 +3,18 @@ package com.cifru.additionalblocks.vegetation;
 import net.minecraft.tileentity.SignTileEntity;
 import net.minecraft.tileentity.TileEntityType;
 
-public class BordTileEntity extends SignTileEntity {
-    private final TileEntityType<?> tileEntityType;
+import java.util.function.Supplier;
 
-    public BordTileEntity(TileEntityType<?> tileEntityType) {
+public class BordTileEntity extends SignTileEntity {
+    private final Supplier<TileEntityType<?>> tileEntityType;
+
+    public BordTileEntity(Supplier<TileEntityType<?>> tileEntityType) {
         super();
         this.tileEntityType = tileEntityType;
     }
 
     @Override
     public TileEntityType<?> getType() {
-        return this.tileEntityType;
+        return this.tileEntityType.get();
     }
 }

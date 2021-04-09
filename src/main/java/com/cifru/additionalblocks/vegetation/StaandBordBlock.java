@@ -16,19 +16,22 @@ import java.util.function.Supplier;
 public class StaandBordBlock extends StandingSignBlock implements IConfigObject {
     private final Supplier<Boolean> enable;
     private final Supplier<TileEntityType<?>> tileEntityType;
+    public final String texture;
 
-    public StaandBordBlock(String registryName, Supplier<Boolean> configValue, Block.Properties properties, Supplier<TileEntityType<?>> bordblock) {
+    public StaandBordBlock(String registryName, Supplier<Boolean> configValue, Block.Properties properties, Supplier<TileEntityType<?>> bordblock, String texture) {
         super(properties, WoodType.OAK);
         this.setRegistryName(registryName);
         this.enable = configValue;
         this.tileEntityType = bordblock;
+        this.texture = texture;
     }
 
-    public StaandBordBlock(String registryName, Block.Properties properties, Supplier<TileEntityType<?>> bordblock) {
+    public StaandBordBlock(String registryName, Block.Properties properties, Supplier<TileEntityType<?>> bordblock, String texture) {
         super(properties, WoodType.OAK);
         this.setRegistryName(registryName);
         this.enable = () -> true;
         this.tileEntityType = bordblock;
+        this.texture = texture;
     }
 
     @Override
@@ -44,7 +47,7 @@ public class StaandBordBlock extends StandingSignBlock implements IConfigObject 
 
     @Override
     public TileEntity createNewTileEntity(IBlockReader worldIn) {
-        return new BordTileEntity(this.tileEntityType.get());
+        return new BordTileEntity(this.tileEntityType);
     }
 }
 

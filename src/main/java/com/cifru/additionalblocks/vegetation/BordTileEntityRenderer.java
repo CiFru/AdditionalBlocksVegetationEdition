@@ -31,7 +31,7 @@ public class BordTileEntityRenderer extends TileEntityRenderer<BordTileEntity> {
         float f = 0.6666667F;
         if (blockstate.getBlock() instanceof StandingSignBlock) {
             matrixStackIn.translate(0.5D, 0.5D, 0.5D);
-            float f1 = -((float)(blockstate.get(StandingSignBlock.ROTATION) * 360) / 16.0F);
+            float f1 = -((float) (blockstate.get(StandingSignBlock.ROTATION) * 360) / 16.0F);
             matrixStackIn.rotate(Vector3f.YP.rotationDegrees(f1));
             this.model.signStick.showModel = true;
         } else {
@@ -51,24 +51,24 @@ public class BordTileEntityRenderer extends TileEntityRenderer<BordTileEntity> {
         matrixStackIn.pop();
         FontRenderer fontrenderer = this.renderDispatcher.getFontRenderer();
         float f2 = 0.010416667F;
-        matrixStackIn.translate(0.0D, (double)0.33333334F, (double)0.046666667F);
+        matrixStackIn.translate(0.0D, (double) 0.33333334F, (double) 0.046666667F);
         matrixStackIn.scale(0.010416667F, -0.010416667F, 0.010416667F);
         int i = tileEntityIn.getTextColor().getTextColor();
         double d0 = 0.4D;
-        int j = (int)((double) NativeImage.getRed(i) * 0.4D);
-        int k = (int)((double)NativeImage.getGreen(i) * 0.4D);
-        int l = (int)((double)NativeImage.getBlue(i) * 0.4D);
+        int j = (int) ((double) NativeImage.getRed(i) * 0.4D);
+        int k = (int) ((double) NativeImage.getGreen(i) * 0.4D);
+        int l = (int) ((double) NativeImage.getBlue(i) * 0.4D);
         int i1 = NativeImage.getCombined(0, l, k, j);
         int j1 = 20;
 
-        for(int k1 = 0; k1 < 4; ++k1) {
+        for (int k1 = 0; k1 < 4; ++k1) {
             IReorderingProcessor ireorderingprocessor = tileEntityIn.func_242686_a(k1, (p_243502_1_) -> {
                 List<IReorderingProcessor> list = fontrenderer.trimStringToWidth(p_243502_1_, 90);
                 return list.isEmpty() ? IReorderingProcessor.field_242232_a : list.get(0);
             });
             if (ireorderingprocessor != null) {
-                float f3 = (float)(-fontrenderer.func_243245_a(ireorderingprocessor) / 2);
-                fontrenderer.func_238416_a_(ireorderingprocessor, f3, (float)(k1 * 10 - 20), i1, false, matrixStackIn.getLast().getMatrix(), bufferIn, false, 0, combinedLightIn);
+                float f3 = (float) (-fontrenderer.func_243245_a(ireorderingprocessor) / 2);
+                fontrenderer.func_238416_a_(ireorderingprocessor, f3, (float) (k1 * 10 - 20), i1, false, matrixStackIn.getLast().getMatrix(), bufferIn, false, 0, combinedLightIn);
             }
         }
 
@@ -76,7 +76,10 @@ public class BordTileEntityRenderer extends TileEntityRenderer<BordTileEntity> {
     }
 
     public static RenderMaterial getMaterial(Block blockIn) {
-
+        if (blockIn instanceof BordBlock)
+            return new RenderMaterial(Atlases.SIGN_ATLAS, new ResourceLocation("abvegedition:" + ((BordBlock) blockIn).texture));
+        if (blockIn instanceof StaandBordBlock)
+            return new RenderMaterial(Atlases.SIGN_ATLAS, new ResourceLocation("abvegedition:" + ((StaandBordBlock) blockIn).texture));
         return new RenderMaterial(Atlases.SIGN_ATLAS, new ResourceLocation("abvegedition:aspen_planks"));
     }
 }

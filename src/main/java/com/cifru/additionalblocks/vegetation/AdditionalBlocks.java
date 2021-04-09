@@ -17,6 +17,7 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.ObjectHolder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -121,14 +122,29 @@ public class AdditionalBlocks {
     public static Block rosewood_trapdoor;
     public static Block aspen_sign_standing;
     public static Block aspen_sign;
+    public static Block baobab_sign_standing;
     public static Block baobab_sign;
+    public static Block blossom_sign_standing;
     public static Block blossom_sign;
+    public static Block maple_sign_standing;
     public static Block maple_sign;
+    public static Block palm_sign_standing;
     public static Block palm_sign;
+    public static Block rosewood_sign_standing;
     public static Block rosewood_sign;
 
+    @ObjectHolder("abvegedition:aspen_sign_tile_entity")
     public static TileEntityType<BordTileEntity> aspen_sign_tile_entity;
-
+    @ObjectHolder("abvegedition:baobab_sign_tile_entity")
+    public static TileEntityType<BordTileEntity> baobab_sign_tile_entity;
+    @ObjectHolder("abvegedition:blossom_sign_tile_entity")
+    public static TileEntityType<BordTileEntity> blossom_sign_tile_entity;
+    @ObjectHolder("abvegedition:maple_sign_tile_entity")
+    public static TileEntityType<BordTileEntity> maple_sign_tile_entity;
+    @ObjectHolder("abvegedition:palm_sign_tile_entity")
+    public static TileEntityType<BordTileEntity> palm_sign_tile_entity;
+    @ObjectHolder("abvegedition:rosewood_sign_tile_entity")
+    public static TileEntityType<BordTileEntity> rosewood_sign_tile_entity;
 
     public AdditionalBlocks() {
         AdditionalBlocksConfig.create();
@@ -223,14 +239,29 @@ public class AdditionalBlocks {
             maple_trapdoor = registerBlockWithItem(e, new ValluikBlock("maple_trapdoor", AdditionalBlocksConfig.enableMaple, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
             palm_trapdoor = registerBlockWithItem(e, new ValluikBlock("palm_trapdoor", AdditionalBlocksConfig.enablePalm, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
             rosewood_trapdoor = registerBlockWithItem(e, new ValluikBlock("rosewood_trapdoor", AdditionalBlocksConfig.enableRosewood, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid()));
-            aspen_sign_standing = registerBlock(e, new StaandBordBlock("aspen_sign_standing", AdditionalBlocksConfig.enableAspen, AbstractBlock.Properties.create(Material.WOOD).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD), () -> aspen_sign_tile_entity));
-            aspen_sign = registerBlock(e, new BordBlock("aspen_sign", AdditionalBlocksConfig.enableAspen, AbstractBlock.Properties.create(Material.WOOD).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD), () -> aspen_sign_tile_entity));
+            aspen_sign_standing = registerBlock(e, new StaandBordBlock("aspen_sign_standing", AdditionalBlocksConfig.enableAspen, AbstractBlock.Properties.create(Material.WOOD).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD), () -> aspen_sign_tile_entity, "aspen_sign"));
+            aspen_sign = registerBlock(e, new BordBlock("aspen_sign", AdditionalBlocksConfig.enableAspen, AbstractBlock.Properties.create(Material.WOOD).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD), () -> aspen_sign_tile_entity, "aspen_sign"));
+            baobab_sign_standing = registerBlock(e, new StaandBordBlock("baobab_sign_standing", AdditionalBlocksConfig.enableBaobab, AbstractBlock.Properties.create(Material.WOOD).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD), () -> baobab_sign_tile_entity, "baobab_sign"));
+            baobab_sign = registerBlock(e, new BordBlock("baobab_sign", AdditionalBlocksConfig.enableBaobab, AbstractBlock.Properties.create(Material.WOOD).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD), () -> baobab_sign_tile_entity, "baobab_sign"));
+            blossom_sign_standing = registerBlock(e, new StaandBordBlock("blossom_sign_standing", AdditionalBlocksConfig.enableBlossom, AbstractBlock.Properties.create(Material.WOOD).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD), () -> blossom_sign_tile_entity, "blossom_sign"));
+            blossom_sign = registerBlock(e, new BordBlock("blossom_sign", AdditionalBlocksConfig.enableBlossom, AbstractBlock.Properties.create(Material.WOOD).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD), () -> blossom_sign_tile_entity, "blossom_sign"));
+            maple_sign_standing = registerBlock(e, new StaandBordBlock("maple_sign_standing", AdditionalBlocksConfig.enableMaple, AbstractBlock.Properties.create(Material.WOOD).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD), () -> maple_sign_tile_entity, "maple_sign"));
+            maple_sign = registerBlock(e, new BordBlock("maple_sign", AdditionalBlocksConfig.enableMaple, AbstractBlock.Properties.create(Material.WOOD).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD), () -> maple_sign_tile_entity, "maple_sign"));
+            palm_sign_standing = registerBlock(e, new StaandBordBlock("palm_sign_standing", AdditionalBlocksConfig.enablePalm, AbstractBlock.Properties.create(Material.WOOD).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD), () -> palm_sign_tile_entity, "palm_sign"));
+            palm_sign = registerBlock(e, new BordBlock("palm_sign", AdditionalBlocksConfig.enablePalm, AbstractBlock.Properties.create(Material.WOOD).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD), () -> palm_sign_tile_entity, "palm_sign"));
+            rosewood_sign_standing = registerBlock(e, new StaandBordBlock("rosewood_sign_standing", AdditionalBlocksConfig.enableRosewood, AbstractBlock.Properties.create(Material.WOOD).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD), () -> rosewood_sign_tile_entity, "rosewood_sign"));
+            rosewood_sign = registerBlock(e, new BordBlock("rosewood_sign", AdditionalBlocksConfig.enableRosewood, AbstractBlock.Properties.create(Material.WOOD).doesNotBlockMovement().hardnessAndResistance(1.0F).sound(SoundType.WOOD), () -> rosewood_sign_tile_entity, "rosewood_sign"));
 
         }
 
         @SubscribeEvent
         public static void onTileRegistry(final RegistryEvent.Register<TileEntityType<?>> e) {
-            e.getRegistry().register(TileEntityType.Builder.create(() -> new BordTileEntity(aspen_sign_tile_entity), aspen_sign, aspen_sign_standing).build(null).setRegistryName("aspen_sign_tile_entity"));
+            e.getRegistry().register(TileEntityType.Builder.create(() -> new BordTileEntity(()-> aspen_sign_tile_entity), aspen_sign, aspen_sign_standing).build(null).setRegistryName("aspen_sign_tile_entity"));
+            e.getRegistry().register(TileEntityType.Builder.create(() -> new BordTileEntity(()-> baobab_sign_tile_entity), baobab_sign, baobab_sign_standing).build(null).setRegistryName("baobab_sign_tile_entity"));
+            e.getRegistry().register(TileEntityType.Builder.create(() -> new BordTileEntity(()-> blossom_sign_tile_entity), blossom_sign, blossom_sign_standing).build(null).setRegistryName("blossom_sign_tile_entity"));
+            e.getRegistry().register(TileEntityType.Builder.create(() -> new BordTileEntity(()-> maple_sign_tile_entity), maple_sign, maple_sign_standing).build(null).setRegistryName("maple_sign_tile_entity"));
+            e.getRegistry().register(TileEntityType.Builder.create(() -> new BordTileEntity(()-> palm_sign_tile_entity), palm_sign, palm_sign_standing).build(null).setRegistryName("palm_sign_tile_entity"));
+            e.getRegistry().register(TileEntityType.Builder.create(() -> new BordTileEntity(()-> rosewood_sign_tile_entity), rosewood_sign, rosewood_sign_standing).build(null).setRegistryName("rosewood_sign_tile_entity"));
         }
 
         @SubscribeEvent
@@ -239,6 +270,11 @@ public class AdditionalBlocks {
                 registerItem(e, new BlockItem(block, new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)).setRegistryName(block.getRegistryName()));
 
             registerItem(e, new BordItem("aspen_sign", AdditionalBlocksConfig.enableAspen, new Item.Properties().group(ItemGroup.DECORATIONS).maxStackSize(16), aspen_sign_standing, aspen_sign));
+            registerItem(e, new BordItem("baobab_sign", AdditionalBlocksConfig.enableBaobab, new Item.Properties().group(ItemGroup.DECORATIONS).maxStackSize(16), baobab_sign_standing, baobab_sign));
+            registerItem(e, new BordItem("blossom_sign", AdditionalBlocksConfig.enableBlossom, new Item.Properties().group(ItemGroup.DECORATIONS).maxStackSize(16), blossom_sign_standing, blossom_sign));
+            registerItem(e, new BordItem("maple_sign", AdditionalBlocksConfig.enableMaple, new Item.Properties().group(ItemGroup.DECORATIONS).maxStackSize(16), maple_sign_standing, maple_sign));
+            registerItem(e, new BordItem("palm_sign", AdditionalBlocksConfig.enablePalm, new Item.Properties().group(ItemGroup.DECORATIONS).maxStackSize(16), palm_sign_standing, palm_sign));
+            registerItem(e, new BordItem("rosewood_sign", AdditionalBlocksConfig.enableRosewood, new Item.Properties().group(ItemGroup.DECORATIONS).maxStackSize(16), rosewood_sign_standing, rosewood_sign));
         }
 
         @SubscribeEvent
