@@ -1,12 +1,18 @@
 package com.cifru.additionalblocks.vegetation;
 
-import net.minecraft.block.*;
+import com.cifru.additionalblocks.vegetation.boat.VBoatEntity;
+import com.cifru.additionalblocks.vegetation.boat.VBoatItem;
+import com.cifru.additionalblocks.vegetation.boat.VBoatType;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
+import net.minecraft.entity.EntityClassification;
+import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.item.SignItem;
 import net.minecraft.item.crafting.FurnaceRecipe;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.item.crafting.ShapedRecipe;
@@ -146,6 +152,9 @@ public class AdditionalBlocks {
     @ObjectHolder("abvegedition:rosewood_sign_tile_entity")
     public static TileEntityType<BordTileEntity> rosewood_sign_tile_entity;
 
+    @ObjectHolder("abvegedition:boat_entity")
+    public static EntityType<VBoatEntity> boat_entity;
+
     public AdditionalBlocks() {
         AdditionalBlocksConfig.create();
     }
@@ -269,6 +278,9 @@ public class AdditionalBlocks {
             for (Block block : blocksWithItems)
                 registerItem(e, new BlockItem(block, new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)).setRegistryName(block.getRegistryName()));
 
+            for (VBoatType type : VBoatType.values())
+                type.setItem(registerItem(e, new VBoatItem(type)));
+
             registerItem(e, new BordItem("aspen_sign", AdditionalBlocksConfig.enableAspen, new Item.Properties().group(ItemGroup.DECORATIONS).maxStackSize(16), aspen_sign_standing, aspen_sign));
             registerItem(e, new BordItem("baobab_sign", AdditionalBlocksConfig.enableBaobab, new Item.Properties().group(ItemGroup.DECORATIONS).maxStackSize(16), baobab_sign_standing, baobab_sign));
             registerItem(e, new BordItem("blossom_sign", AdditionalBlocksConfig.enableBlossom, new Item.Properties().group(ItemGroup.DECORATIONS).maxStackSize(16), blossom_sign_standing, blossom_sign));
@@ -287,6 +299,11 @@ public class AdditionalBlocks {
             e.getRegistry().register(SHAPED_RECIPE_SERIALIZER.setRegistryName(new ResourceLocation("abvegedition", "shaped")));
             e.getRegistry().register(SHAPELESS_RECIPE_SERIALIZER.setRegistryName(new ResourceLocation("abvegedition", "shapeless")));
             e.getRegistry().register(FURNACE_RECIPE_SERIALIZER.setRegistryName(new ResourceLocation("abvegedition", "furnace")));
+        }
+
+        @SubscribeEvent
+        public static void onEntityRegistry(RegistryEvent.Register<EntityType<?>> e){
+            e.getRegistry().register(EntityType.Builder.<VBoatEntity>create(VBoatEntity::new, EntityClassification.MISC).size(1.375F, 0.5625F).trackingRange(10).build("").setRegistryName("boat_entity"));
         }
     }
 
