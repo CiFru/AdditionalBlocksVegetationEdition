@@ -5,9 +5,11 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.WorldGenRegistries;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.OreFeatureConfig;
+import net.minecraft.world.gen.GenerationStage;
+import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
+import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.foliageplacer.BlobFoliagePlacer;
+import net.minecraft.world.gen.trunkplacer.StraightTrunkPlacer;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
@@ -22,35 +24,36 @@ import net.minecraftforge.registries.ForgeRegistries;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class WorldGeneration {
 
-//    public static ConfiguredFeature<?,?> ore_marble;
+    public static ConfiguredFeature<BaseTreeFeatureConfig,?> blossom_tree;
 
-//    public static void onFeatureRegistry(final RegistryEvent.Register<Feature<?>> e){
-//        ore_marble = Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, AdditionalBlocks.smooth_marble.getDefaultState(), 33));
-//        ore_marble.range(80).square().func_242731_b(10);
-//        Registry.register(WorldGenRegistries.CONFIGURED_FEATURE,
-//            new ResourceLocation("abstoneedition", "ore_marble"),
-//            ore_marble
-//        );
-//    }
+    public static void onFeatureRegistry(final RegistryEvent.Register<Feature<?>> e){
+        blossom_tree = Feature.TREE.withConfiguration((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(AdditionalBlocks.blossom_log.getDefaultState()), new SimpleBlockStateProvider(AdditionalBlocks.blossom_leaves.getDefaultState()), new BlobFoliagePlacer(FeatureSpread.func_242252_a(2), FeatureSpread.func_242252_a(0), 3), new StraightTrunkPlacer(4, 2, 0), new TwoLayerFeature(1, 0, 1))).setIgnoreVines().build());
+        Registry.register(WorldGenRegistries.CONFIGURED_FEATURE,
+            new ResourceLocation("abvegedition", "blossom_tree"),
+            blossom_tree
+        );
+    }
 
-//    @SubscribeEvent(priority = EventPriority.LOW)
-//    public static void onBiomeLoad(BiomeLoadingEvent e){
-//        RegistryKey<Biome> biomeKey = RegistryKey.getOrCreateKey(ForgeRegistries.Keys.BIOMES, e.getName());
-//
-//        // all overworld biomes
-//        if(BiomeDictionary.getBiomes(BiomeDictionary.Type.OVERWORLD).contains(biomeKey)){
-//
-//        }
-//
-//        // all nether biomes
-//        if(BiomeDictionary.getBiomes(BiomeDictionary.Type.OVERWORLD).contains(biomeKey)){
-//
-//        }
-//
-//        // all end biomes
-//        if(BiomeDictionary.getBiomes(BiomeDictionary.Type.OVERWORLD).contains(biomeKey)){
-//
-//        }
-//    }
+    @SubscribeEvent(priority = EventPriority.LOW)
+    public static void onBiomeLoad(BiomeLoadingEvent e){
+        RegistryKey<Biome> biomeKey = RegistryKey.getOrCreateKey(ForgeRegistries.Keys.BIOMES, e.getName());
+
+        e.getGeneration().withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, blossom_tree);
+
+        // all overworld biomes
+        if(BiomeDictionary.getBiomes(BiomeDictionary.Type.OVERWORLD).contains(biomeKey)){
+
+        }
+
+        // all nether biomes
+        if(BiomeDictionary.getBiomes(BiomeDictionary.Type.NETHER).contains(biomeKey)){
+
+        }
+
+        // all end biomes
+        if(BiomeDictionary.getBiomes(BiomeDictionary.Type.OVERWORLD).contains(biomeKey)){
+
+        }
+    }
 
 }
